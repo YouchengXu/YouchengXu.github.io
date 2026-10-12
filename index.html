@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Youcheng Xu</title>
+<meta name="description" content="Youcheng Xu: Design Engineering at Imperial College London, working on robot manipulation and real-robot learning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <p class="mono kicker">robot manipulation · real-robot learning</p>
+    <h1>Youcheng Xu</h1>
+    <p class="lede">
+      Design Engineering student at Imperial College London.
+      I build robot hardware and get learning policies running on it:
+      leader arms for teleoperation, camera calibration, data pipelines, and VLA fine-tuning.
+    </p>
+    <nav class="links">
+      <a href="https://github.com/YouchengXu">GitHub</a>
+      <!-- <a href="mailto:you@example.com">Email</a> -->
+      <!-- <a href="cv.pdf">CV</a> -->
+    </nav>
+  </header>
+
+  <section>
+    <h2>Now</h2>
+    <ul class="now">
+      <li>Year 3, BEng Design Engineering, Imperial College London (Dyson School).</li>
+      <li>Building my own SO-101 arms at home, working towards an XLeRobot mobile manipulator.</li>
+      <li>Starting a cat-play robot: can a camera tell when a cat is actually engaged?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="row">
+      <div>
+        <h3>Research Intern, MVIG-RHOS Lab</h3>
+        <p class="muted">Shanghai Jiao Tong University · Prof. Yong-Lu Li's group</p>
+      </div>
+      <span class="mono date">2026</span>
+    </div>
+    <div class="row">
+      <div>
+        <h3>Dexterous hand RL, LinkerHand online internship</h3>
+        <p class="muted">Ran dexterous-grasping RL demos in Isaac Lab</p>
+      </div>
+      <span class="mono date">2026</span>
+    </div>
+    <div class="row">
+      <div>
+        <h3>Robot RL simulation camp, Motphys × Xbotics</h3>
+        <p class="muted">Kinematics, PPO; quadruped (Unitree Go2) locomotion in MotrixLab</p>
+      </div>
+      <span class="mono date">2026</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <article class="card">
+      <div class="card-head">
+        <h3>Closed-loop grasping on an industrial arm</h3>
+        <span class="tag done">Sep 2026 · lab</span>
+      </div>
+      <p>
+        Wrote the hand-eye calibration for a DUCO GCR5 arm with a fixed RealSense D435i,
+        using a touch-probe method, then ran the lab's SAM3 + AnyGrasp pipeline end to end on the real arm.
+      </p>
+      <ul class="facts">
+        <li><b>1.8 mm</b> calibration residual (8 points), 7.9 mm between two independent sessions</li>
+        <li>Three successful closed-loop grasps over two days</li>
+        <li>Fixed a wrist-flip failure by replacing linear moves with joint moves from URDF IK</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <h3>GELLO leader arm for the GCR5</h3>
+        <span class="tag done">Aug–Sep 2026 · lab</span>
+      </div>
+      <p>
+        Adapted the GELLO teleoperation arm to a 22 kg industrial arm. Matched GCR5 and UR5 joint axes
+        from their URDFs so the UR5 kit could be reused, then did assembly, servo bring-up and wiring.
+        Teleoperation of the GCR5 now runs.
+      </p>
+      <ul class="facts">
+        <li>7 Dynamixel XL330 servos on one bus, ~52 Hz read with zero dropped packets</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <h3>Bimanual data and π0.5 post-training</h3>
+        <span class="tag done">Summer 2026 · lab</span>
+      </div>
+      <p>
+        Collected bimanual teleoperation demos, converted them to LeRobot format, and set up π0.5
+        post-training with openpi. Found the wrist camera was overexposed in most frames,
+        measured it, and re-collected the dataset with the problem fixed.
+      </p>
+      <ul class="facts">
+        <li>Wrist-camera overexposure <b>71–85% → 0%</b> after re-collection</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <h3>Cat-play robot</h3>
+        <span class="tag wip">in progress · personal</span>
+      </div>
+      <p>
+        Open-source cat toys are open loop: none of them watch the cat. The hard part is a reward signal,
+        detecting from video when a cat is really engaged. Plan: an overhead camera, a few discrete
+        play primitives, behaviour cloning from my own demos, then on-robot learning. Five cats give
+        a built-in test for unseen individuals.
+      </p>
+    </article>
+
+    <article class="card">
+      <div class="card-head">
+        <h3>SO-101 arms at home</h3>
+        <span class="tag wip">in progress · personal</span>
+      </div>
+      <p>
+        Assembled an SO-101 leader/follower pair; teleoperation works. Next: record demos, train with
+        LeRobot, measure success rate, then build an XLeRobot (two arms on a mobile base).
+      </p>
+    </article>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="row">
+      <div>
+        <h3>BEng Design Engineering</h3>
+        <p class="muted">Imperial College London, Dyson School of Design Engineering</p>
+      </div>
+      <span class="mono date">2024–2027</span>
+    </div>
+  </section>
+
+  <footer class="mono muted">
+    © 2026 Youcheng Xu
+  </footer>
+</main>
+</body>
+</html>
